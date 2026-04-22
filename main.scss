@@ -1,0 +1,113 @@
+    @use "./mixins" as *;
+    @use "./variables" as *;
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        font-family: $font-main;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 100vh;
+    }
+
+
+    main {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .header {
+        @include flex-center(column, center);
+
+        .header__container {
+            @include flex-center(row, space-between);
+            width: 70%;
+
+            .header__logo {
+                width: 70px;
+                height: 70px;
+                margin: 10px 0;
+            }
+
+            .header__nav {
+                .header__nav-link {
+                    margin: 0 15px;
+                    color: black;
+                    text-decoration: none;
+                    font-weight: 600;
+                    text-decoration: underline;
+                    font-size: map-get($font-sizes, small);
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        color: map-get($main-colors, secondary);
+                    }
+
+                    &:active {
+                        color: map-get($main-colors, primary);
+                    }
+                }
+            }
+        }
+    }
+
+
+    .main {
+
+        .first-section {
+            @include flex-center(column, center);
+            @include images-background('./img/wp7287123-4k-mountain-wallpapers.jpg');
+            background-image: linear-gradient(0deg, rgba(51, 44, 41, 0.45), rgba(51, 44, 41, 0.45)), url('./img/wp7287123-4k-mountain-wallpapers.jpg');
+
+            .first-section__container {
+                width: 100%;
+                max-width: 70%;
+                margin: 0 auto;
+
+                .first-section_name {
+                    color: white;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: map-get($font-sizes, small);
+                    margin-top: 10em;                }
+
+                .first-section__title {
+                    font-size: map-get($font-sizes, large);
+                    color: white;
+                    margin-top: 0px;
+                    margin-bottom: 20px;
+                    text-shadow: 4px 4px 17px rgba(0, 0, 0, 0.4);
+                    letter-spacing: 3px;
+                    line-height: 1;
+                }
+
+                .first-section__text {
+                    color: white;
+
+                    .first-section__link {
+                        color: white;
+                        transition: all 0.3s ease;
+
+                        &:hover {
+                            text-decoration-color: map-get($main-colors, secondary);
+                        }
+                    }
+                }
+
+                .first-section__button {
+                    @include button-base;
+                    margin-top: 40px;
+                    margin-bottom: 190px;
+                }
+
+            }
+        }
+
+    }
