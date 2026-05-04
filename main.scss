@@ -1,5 +1,6 @@
     @use "./mixins" as *;
     @use "./variables" as *;
+    @use "./extend" as *;
 
     html,
     body {
@@ -47,11 +48,11 @@
                     transition: $transition;
 
                     &:hover {
-                        color: map-get($main-colors, secondary);
+                        color:$secondary;
                     }
 
                     &:active {
-                        color: map-get($main-colors, primary);
+                        color:$primary;
                     }
                 }
             }
@@ -63,8 +64,8 @@
 
         .first-section {
             @include flex-center(column, center);
-            @include images-background('./img/wp7287123-4k-mountain-wallpapers.jpg');
-            background-image: linear-gradient(0deg, rgba(51, 44, 41, 0.45), rgba(51, 44, 41, 0.45)), url('./img/wp7287123-4k-mountain-wallpapers.jpg');
+            @include images-background('../img/wp7287123-4k-mountain-wallpapers.jpg');
+            background-image: linear-gradient(0deg, rgba(51, 44, 41, 0.45), rgba(51, 44, 41, 0.45)), url('../img/wp7287123-4k-mountain-wallpapers.jpg');
 
             .first-section__container {
                 width: 100%;
@@ -97,7 +98,7 @@
                         transition: $transition;
 
                         &:hover {
-                            text-decoration-color: map-get($main-colors, secondary);
+                            text-decoration-color: $secondary;
                         }
                     }
                 }
@@ -125,7 +126,8 @@
                 margin: 0 auto;
 
                 .second-section__title {
-                    font-size: map-get($font-sizes, "m/l");
+                    font-size: map-get($font-sizes, l-large);
+                    font-weight: 400;
                     color: $white;
                     margin-bottom: 40px;
                     margin-top: 90px;
@@ -140,10 +142,27 @@
 
 
                     .second-section__article {
-                        height: 490px;
-                        width: 360px;
-                        background-color: $white;
-                        border-radius: 50px;
+                        @extend %card-base;
+
+                        .second-section__name-card {
+                            font-size: map-get($font-sizes, medium);
+                            font-weight: 100;
+                            color: $black;
+                            margin-bottom: 20px;
+                        }
+
+                        .second-section__text {
+                            color: $black;
+                            text-align: center;
+                            padding: 0 20px;
+                            border-bottom: 2px solid rgb(197, 197, 197);
+                            margin-top: 5px;
+                            margin-bottom: 20px;   
+                        }
+                        .second-section__image {
+                            @include images-base(300px, 300px);
+                            margin-bottom: 10px;
+                        }
                     }
                 }
             }

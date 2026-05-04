@@ -1,0 +1,11 @@
+    @use "./mixins" as *;
+    @use "./variables" as *;
+
+%card-base {
+    height: 490px;
+    width: 360px;
+    border-radius: 50px;
+    background-color: $white;
+    @include flex-center(column,center);
+}
+
