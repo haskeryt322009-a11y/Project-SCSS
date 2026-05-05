@@ -1,15 +1,26 @@
 $font-main: 'Poppins', sans-serif;
 
+
+$color-black: #070707;
+$color-white: #f1f1f1;
+$color-primary: #323232;
+$color-secondary: #f08c52;
+
+
+$transition: all 0.3s ease;
+
+
+$radius-lg: 50px;
+$radius-full: 50%;
+
+
+$shadow: 4px 4px 17px rgba(0, 0, 0, 0.4);
+
+
 $font-sizes: (
     small: 18px,
     medium: 24px,
-    m/l: 40px,
-    l-large: 60px,
-    large: 100px
+    medium-large: 50px,
+    large: 100px,
+    xlarge: 60px
 );
-
-$transition: all 0.3s ease;
-$black: #070707;
-$white: #f1f1f1;
-$primary: #323232;
-$secondary: #f08c52;
